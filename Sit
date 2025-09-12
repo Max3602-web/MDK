@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter Row Example'),
+        ),
+        body: Center(
+          child: Row(//для того чтобы работать с текстом 
+            mainAxisAlignment: MainAxisAlignment.spaceAround, // Distribute space evenly
+            crossAxisAlignment: CrossAxisAlignment.center, // Vertically center children
+            children: <Widget>[
+              Container(//контейнер
+                width: 80,
+                height: 80,
+                color: Colors.red,
+                child: const Center(child: Text('Текст 1')),
+              ),
+              Container(//контейнер
+                width: 80,
+                height: 80,
+                child: const Center(child: Text('Текст 2',style: TextStyle(color: Colors.green),)),
+              ),
+              Container(//контейнер
+                width: 80,
+                height: 80,
+                color: Colors.blue,
+                child: const Center(child: Text('Текст 3',  style: TextStyle(fontSize: 24.0),)),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
