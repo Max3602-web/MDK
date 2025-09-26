@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sign Up'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // Вернуться на предыдущий экран
+          },
+        ),
+      ),
+      body: Center(
+        child: Container(
+          color: Colors.green,
+          width: 100,
+          height: 100,
+          child: const Center(
+            child: Text(
+              'Экран регистрации',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
