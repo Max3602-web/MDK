@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sign Up'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // Вернуться на предыдущий экран
+          },
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            // Первая строка ввода
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Введите имя',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 10),
+            // Вторая строка ввода
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Введите email',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 20),
+            // Красный квадрат
+            Container(
+              color: Colors.green,
+              width: 100,
+              height: 100,
+              child: const Center(
+                child: Text(
+                  'Экран регистрации',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
